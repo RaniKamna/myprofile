@@ -11,9 +11,10 @@ export const Mybioscreen = () => {
 
     useEffect(() => {
          const data = localStorage.getItem('formData');
-         console.log(data);
-         //setBioData(data);
+         console.log(JSON.parse(data));
+         setBioData(JSON.parse(data));
     }, []);
+
     return (
         <div className='bioscreencontainer'>
             <div className='container'>
@@ -23,7 +24,7 @@ export const Mybioscreen = () => {
                         <h5>About me</h5>
                         <Link to='/edit'> <MdEdit /> </Link>
                     </div>
-                    {bioData.about !== '' ? <p>{bioData.about}</p> : <p>No about me added yet</p>}
+                    {bioData.about !== '' ? <p>{bioData.aboutme}</p> : <p>No about me added yet</p>}
                 </div>
                 <hr />
                 <div className='bloodgroupcontainer d-flex justify-content-between'>
